@@ -18,11 +18,12 @@ export default {
     width: 110px;
     height: 76px;
     cursor: pointer;
+    z-index: 1000;
 }
 .logo-bar {
     position: absolute;
     width: 110px;
-    height: 2px;
+    height: 1px;
     background-color: #3e3e3e;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -36,7 +37,7 @@ export default {
     top: 74px;
 }
 .logo-bars:hover .logo-bar.top {
-    transition: top 0.4s ease-in-out, transform 0.4s ease-in-out 0.8s;
+    transition: top 0.4s ease-in-out, transform 0.3s ease-in-out 0.7s;
     top: 37px;
     transform: rotate(45deg);
 }
@@ -45,7 +46,7 @@ export default {
     opacity: 0;
 }
 .logo-bars:hover .logo-bar.bottom {
-    transition: top 0.4s ease-in-out, transform 0.4s ease-in-out 0.8s;
+    transition: top 0.4s ease-in-out, transform 0.3s ease-in-out 0.7s;
     top: 37px;
     transform: rotate(-45deg);
 }
