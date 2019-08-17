@@ -1,6 +1,6 @@
 <template>
     <div class="flex-container">
-        <div class="logo-bars">
+        <div :class="['logo-bars', {'fixed':this.isLogoFixed}]" @mouseenter="hoveredLogo">
             <div class="logo-bar top"></div>
             <div class="logo-bar medium"></div>
             <div class="logo-bar bottom"></div>
@@ -16,7 +16,21 @@
 
 <script>
 export default {
-
+    data() {
+        return {
+            isLogoFixed: false,
+        }
+    },
+    props: {
+        isHoverOnce: Boolean,
+    },
+    methods: {
+        hoveredLogo() {
+            if(this.isHoverOnce) {
+                this.isLogoFixed = true;
+            }
+        }
+    }
 }
 </script>
 
@@ -92,6 +106,22 @@ export default {
 }
 .logo-bars:hover + .nav-list li {
     transition: 0.2s ease-in 0.8s;
+    opacity: 1;
+}
+
+/* fixed logo CSS */
+.fixed .logo-bar.top {
+    top: 37px;
+    transform: rotate(45deg);
+}
+.fixed .logo-bar.medium {
+    opacity: 0;
+}
+.fixed .logo-bar.bottom {
+    top: 37px;
+    transform: rotate(-45deg);
+}
+.fixed + .nav-list li {
     opacity: 1;
 }
 </style>
