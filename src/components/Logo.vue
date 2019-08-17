@@ -1,8 +1,16 @@
 <template>
-    <div class="logo-bars">
-        <div class="logo-bar top"></div>
-        <div class="logo-bar medium"></div>
-        <div class="logo-bar bottom"></div>
+    <div class="flex-container">
+        <div class="logo-bars">
+            <div class="logo-bar top"></div>
+            <div class="logo-bar medium"></div>
+            <div class="logo-bar bottom"></div>
+        </div>
+        <ul class="nav-list">
+            <li><slot name="list-1"></slot></li>
+            <li><slot name="list-2"></slot></li>
+            <li><slot name="list-3"></slot></li>
+            <li><slot name="list-4"></slot></li>
+        </ul>
     </div>
 </template>
 
@@ -13,6 +21,15 @@ export default {
 </script>
 
 <style scoped>
+.flex-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* logo-bar CSS */
 .logo-bars {
     position: relative;
     width: 110px;
@@ -51,4 +68,30 @@ export default {
     transform: rotate(-45deg);
 }
 
+/* nav-list CSS */
+.nav-list {
+  position: absolute;
+  width: 310px;
+}
+.nav-list li {
+  width: 100px;
+  padding: 20px 0;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.nav-list li:nth-child(odd) {
+  margin-right: 110px;
+}
+.nav-list li:nth-child(1), .nav-list li:nth-child(2) {
+    margin-bottom: 40px;
+}
+.logo-bars:hover + .nav-list li {
+    transition: 0.2s ease-in 0.8s;
+    opacity: 1;
+}
 </style>
