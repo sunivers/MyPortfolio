@@ -34,4 +34,7 @@ export default {
 html, body, #app {
   height: 100%;
 }
+.container {
+  padding: 50px 20px;
+}
 </style>
