@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <logo :is-hover-once="true">
-      <template slot="list-1">personal p.j</template>
+      <template slot="list-1">company p.j</template>
       <template slot="list-2">about me</template>
-      <template slot="list-3">company p.j</template>
+      <template slot="list-3">personal p.j</template>
       <template slot="list-4">contact me</template>
     </logo>
   </div>
