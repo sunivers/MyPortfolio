@@ -1,11 +1,16 @@
 <template>
   <div id="app">
-    <logo :is-hover-once="true">
-      <template slot="list-1">company p.j</template>
-      <template slot="list-2">about me</template>
-      <template slot="list-3">personal p.j</template>
-      <template slot="list-4">contact me</template>
-    </logo>
+    <template v-if="this.$route.path === '/'">
+      <logo :is-hover-once="true">
+        <template slot="list-1"><router-link to="/company">company p.j</router-link></template>
+        <template slot="list-2"><router-link to="/about">about me</router-link></template>
+        <template slot="list-3"><router-link to="/personal">personal p.j</router-link></template>
+        <template slot="list-4"><router-link to="/contact">contact me</router-link></template>
+      </logo>
+    </template>
+    <template v-else>
+      <router-view></router-view>
+    </template>
   </div>
 </template>
 
@@ -16,6 +21,9 @@ export default {
   name: 'app',
   components: {
     Logo
+  },
+  created() {
+    console.log(this.$route);
   }
 }
 </script>
