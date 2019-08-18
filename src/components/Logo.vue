@@ -56,7 +56,7 @@ export default {
     width: 110px;
     height: 1px;
     background-color: #3e3e3e;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.25), 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 .logo-bar.top {
     top: 0;
@@ -91,7 +91,6 @@ export default {
   width: 100px;
   padding: 20px 0;
   display: inline-block;
-  text-align: center;
   vertical-align: middle;
   font-size: 1rem;
   font-weight: 100;
@@ -100,6 +99,7 @@ export default {
 }
 .nav-list li:nth-child(odd) {
   margin-right: 110px;
+  text-align: right;
 }
 .nav-list li:nth-child(1), .nav-list li:nth-child(2) {
     margin-bottom: 40px;
@@ -107,6 +107,14 @@ export default {
 .logo-bars:hover + .nav-list li {
     transition: 0.2s ease-in 0.8s;
     opacity: 1;
+}
+.nav-list li a {
+    text-decoration: none;
+    color: #333;
+}
+.nav-list li a:hover, .nav-list li a:active {
+    color: #42b883;
+    font-weight: 400;
 }
 
 /* fixed logo CSS */
