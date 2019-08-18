@@ -18,7 +18,7 @@ export default {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #a0a0a0;
-    margin: 20px;
+    margin: 40px 0;
 }
 .header a.router-link-exact-active {
     color: #42b883;
@@ -26,10 +26,11 @@ export default {
 }
 .header a {
     color: #333;
-    padding: 0 12px;
+    padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 100;
+    display: inline-block;
 }
 .header a:hover {
     text-decoration: underline;
