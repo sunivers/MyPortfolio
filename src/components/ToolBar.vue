@@ -1,8 +1,8 @@
 <template>
     <div class="header">
         <router-link to="/company">company p.j</router-link>
-        <router-link to="/about">about me</router-link>
         <router-link to="/personal">personal p.j</router-link>
+        <router-link to="/about">about me</router-link>
         <router-link to="/contact">contact me</router-link>
     </div>
 </template>
