@@ -22,14 +22,14 @@ export default {
 }
 .header a.router-link-exact-active {
     color: #42b883;
-    font-weight: 400;
+    font-weight: normal;
 }
 .header a {
     color: #333;
     padding: 10px 15px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: 100;
+    font-weight: lighter;
     display: inline-block;
 }
 .header a:hover {
