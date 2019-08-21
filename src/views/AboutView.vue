@@ -3,70 +3,20 @@
         <router-link to="/"><logo></logo></router-link>
         <tool-bar></tool-bar>
 
-        <!-- Time Line -->
-        <section class="timeline">
-            <ul>
-                <li>
-                <div>
-                    <time>1934</time> 
+        <!-- Intro -->
+        <section class="section intro">
+            <h1>intro</h1>
+            <div class="flex-container">
+                <div class="image">
+                    <img src="../assets/profile_image.jpeg" alt="profile image">
                 </div>
-                </li>
-                <li>
-                <div>
-                    <time>1937</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1940</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1943</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1946</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1956</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1957</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1967</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1977</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>1985</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>2000</time> 
-                </div>
-                </li>
-                <li>
-                <div>
-                    <time>2005</time> 
-                </div>
-                </li>
-            </ul>
+                <p class="text">
+                    개발자로서는 2년차, 프론트엔드 직군으로는 1년차가 된 주니어 개발자입니다.<br>
+                    기획 및 디자인을 전공하였고, 윈도우 프로그래밍 경력이 1년 있습니다. 이 후 5개월의 웹 퍼블리셔를 거쳐 현재의 프론트엔드 개발자에 이르게 되었습니다.<br>
+                    현업에서 Vue.js, RESTful API, jQuery 등의 기술을 사용하여 약 10여개 서비스의 front-end를 담당하여 개발 및 운영하였으며, Node.js, MySQL 등을 이용한 짧은 back-end 경험도 있습니다.<br>
+                    개발자로서 필요한 자질 중 하나는 끝없는 자기개발이라고 생각합니다. 그래서 블로그 운영이나 TIL(Today I Learned) 또는 1일 1커밋 등의 공부 습관을 꾸준히 유지하려 노력중이며, 또한 빠르게 발전하는 IT업계에서 뒤쳐지지 않기 위해 배우는 것을 두려워하지 않고 끊임없이 도전하고 있습니다.<br>
+                </p>
+            </div>
         </section>
     </div>
 </template>
@@ -84,54 +34,42 @@ export default {
 </script>
 
 <style scoped>
-.timeline ul li {
-  list-style-type: none;
-  position: relative;
-  width: 6px;
-  margin: 0 auto;
-  padding-top: 50px;
-  background: #999;
+/* section styling */
+.section {
+    margin: 20px 0 50px 0;
 }
-.timeline ul li::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: inherit;
+.section h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #aaa;
+  font-weight: bold;
 }
-.timeline ul li div {
-  position: relative;
-  bottom: 0;
-  width: 400px;
-  padding: 15px;
-  background: #F45B69;
+
+/* intro styling */
+.intro .flex-container {
+    display: flex;
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: column;
 }
-.timeline ul li div::before {
-  content: '';
-  position: absolute;
-  bottom: 7px;
-  width: 0;
-  height: 0;
-  border-style: solid;
+@media (min-width:768px) {
+    .intro .flex-container {
+        flex-direction: row;
+    }
 }
-.timeline ul li:nth-child(odd) div {
-  left: 45px;
+.intro .image {
+    margin: 0 20px 20px 0;
 }
-.timeline ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent #F45B69 transparent transparent;
+.intro img {
+    width: 150px;
+    border-radius: 70px;
 }
-.timeline ul li:nth-child(even) div {
-  left: -467px;
-}
-.timeline ul li:nth-child(even) div::before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent #F45B69;
+.intro .text {
+    font-weight: lighter;
+    padding: 20px;
+    line-height: 1.3;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 </style>
