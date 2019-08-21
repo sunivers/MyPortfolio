@@ -8,7 +8,7 @@
             <h1>intro</h1>
             <div class="flex-container">
                 <div class="image">
-                    <img src="../assets/profile_image.jpeg" alt="profile image">
+                    <!-- <img src="../assets/profile_image.jpeg" alt="profile image"> -->
                 </div>
                 <p class="text">
                     개발자로서는 2년차, 프론트엔드 직군으로는 1년차가 된 주니어 개발자입니다.<br>
@@ -140,7 +140,7 @@ export default {
 .intro .flex-container {
     display: flex;
     padding: 20px;
-    max-width: 700px;
+    max-width: 715px;
     margin: 0 auto;
     align-items: center;
     flex-direction: column;
@@ -152,6 +152,11 @@ export default {
 }
 .intro .image {
     margin: 0 20px 20px 0;
+    width: 150px;
+    height: 150px;
+    background-image: url('../assets/profile_image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .intro img {
     width: 150px;
@@ -162,6 +167,7 @@ export default {
     padding: 20px;
     line-height: 1.3;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
 }
 
 /* timeline styling */
