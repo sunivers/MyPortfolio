@@ -18,17 +18,108 @@
                 </p>
             </div>
         </section>
+
+        <!-- Time Line -->
+        <section class="section timeline">
+            <h1>timeline</h1>
+            <ol>
+                <li>
+                <div>
+                    <time>2010.03</time> 
+                    디지털미디어 학부 입학.<br>
+                    전공필수로 C언어를 수강하고 흥미를 느꼈으나 좌절감을 맛봄.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2015.03</time> 
+                    '미디어스코프'에서 콘텐츠 기획자로 인턴 4개월 시작.<br>
+                    딱 떨어지지 않고 모호한 경계가 많은 기획자의 일에 어려움과 회의감을 느낌.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2015.08</time> 
+                    안드로이드 앱 개발자 과정 학원 등록.<br>
+                    약 4개월간 Java, Database 등 프로그래밍 기초를 배우고 안드로이드 프로젝트를 실습함.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2015.12</time> 
+                    '로드피아' 입사.<br>
+                    C++/MFC 프레임워크를 사용하여 윈도우 프로그래밍 시작.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2016.03</time> 
+                    TCP/IP 통신으로 장비에서 데이터 추출하고 MySQL을 이용하여 데이터 저장 및 읽기 등
+                    제조공장에 납품하는 POP 솔루션 유지보수 및 커스터마이징 작업에 투입.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2017.03</time> 
+                    윈도우 프로그래밍보다 더욱 시각적으로 유행을 선도하고 흥미로운 컨텐츠를 다루는 웹 개발(front-end)에 관심이 생겨 
+                    본격적으로 공부하기 위해 로드피아 퇴사.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2017.10</time> 
+                    약 6개월의 독학 끝에 '더디브랜드'에 퍼블리셔로 입사.<br>
+                    다양한 마크업 개발과 api 사용을 경험하였고 
+                    웹 호스팅 및 도메인 관리를 통해 전반적인 서버/클라이언트 구조를 이해하고 습득함. 
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2018.02</time> 
+                    회사 내 it 인력이 전무한 상태에서 마크업 개발보다 기획 및 PM의 역할을 필요로 하여 퇴사.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2018.04</time> 
+                    '노마드 소프트'에 front-end 개발자로 입사.<br>
+                    jQuery 위주의 front-end 개발 패턴에 Vue.js를 도입하고, 
+                    ajax와 RESTful API를 사용하여 다양한 웹 서비스 개발.
+                </div>
+                </li>
+                <li>
+                <div>
+                    <time>2019.05</time> 
+                    사내 웹팀 해체에 의한 퇴사.<br>
+                    현재까지 다양한 사이드 프로젝트 진행 및 새로운 언어와 프레임워크, 방법론 등을 학습하며 프로그래밍 영역 확장 중.
+                </div>
+                </li>
+                <li></li>
+            </ol>
+            <div class="arrows">
+                <button class="arrow arrow__prev disabled" disabled>
+                    <img src="../assets/arrow_prev.svg" alt="prev timeline arrow">
+                </button>
+                <button class="arrow arrow__next">
+                    <img src="../assets/arrow_next.svg" alt="next timeline arrow">
+                </button>
+            </div>
+        </section>
     </div>
 </template>
 
 <script>
 import Logo from '../components/Logo.vue';
 import ToolBar from '../components/ToolBar.vue';
+import activateTimeLine from '../js/timeline.js';
 
 export default {
     components: {
         Logo,
         ToolBar,
+    },
+    mounted() {
+        activateTimeLine();
     }
 }
 </script>
@@ -71,5 +162,119 @@ export default {
     padding: 20px;
     line-height: 1.3;
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* timeline styling */
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+ 
+.timeline ol {
+  font-size: 0;
+  width: 100vw;
+  padding: 250px 0;
+  transition: all 1s;
+}
+ 
+.timeline ol li {
+  position: relative;
+  display: inline-block;
+  list-style-type: none;
+  width: 160px;
+  height: 3px;
+  background: #aaa;
+}
+ 
+.timeline ol li:last-child {
+  width: 280px;
+}
+ 
+.timeline ol li:not(:first-child) {
+  margin-left: 14px;
+}
+ 
+.timeline ol li:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #F45B69;
+}
+
+.timeline ol li div {
+  position: absolute;
+  left: calc(100% + 7px);
+  width: 280px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: lighter;
+  white-space: normal;
+  color: black;
+  background: white;
+  line-height: 1.3;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.timeline ol li div::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ol li div time {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 7px;
+}
+
+.timeline ol li:nth-child(odd) div {
+  top: -16px;
+  transform: translateY(-100%);
+}
+ 
+.timeline ol li:nth-child(odd) div::before {
+  top: 100%;
+  border-width: 8px 8px 0 0;
+  border-color: white transparent transparent transparent;
+}
+
+.timeline ol li:nth-child(even) div {
+  top: calc(100% + 16px);
+}
+ 
+.timeline ol li:nth-child(even) div::before {
+  top: -8px;
+  border-width: 8px 0 0 8px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline .arrows {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+ 
+.timeline .arrows .arrow__prev {
+  margin-right: 20px;
+}
+ 
+.timeline .disabled {
+  opacity: .5;
+}
+ 
+.timeline .arrows img {
+  width: 45px;
+  height: 45px;
 }
 </style>
