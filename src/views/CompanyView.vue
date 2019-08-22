@@ -38,7 +38,7 @@
                             회원가입, SNS Login 및 수혜자 신청 파일 업로드, 일간/주간/월간 통계 그래프를 비롯한 유저페이지 프론트엔드 개발 50% 참여.<br>
                             수혜자 승인, 통계, 신고 관리, 배너/공지 등록 등을 포함한 어드민 페이지 프론트엔드 80% 개발.
                         </p>
-                        <a class="button" href="https://www.kkoolbee.com/index" disabled>
+                        <a class="button" href="https://www.kkoolbee.com/index" target="_blank">
                             <span>View Website</span>
                             <span class="icon"><i class="fas fa-angle-right"></i></span>
                         </a>
@@ -56,7 +56,9 @@
                             유저페이지 - 마이페이지, 결제 시 쿠폰 적용을 비롯한 일부 프론트엔드 개발 참여 및 운영<br>
                             어드민 - 매거진 등록/수정, 예약 요일별 설정 페이지 포함 프론트엔드 15% 참여
                         </p>
-                        <a class="button" href="https://entpark.co.kr/kr" target="_blank"><span>Visit Website</span><span class="icon"><i class="fas fa-angle-right"></i></span></a>
+                        <a class="button" href="https://entpark.co.kr/kr" target="_blank">
+                        <span>Visit Website</span><span class="icon"><i class="fas fa-angle-right"></i></span>
+                        </a>
                     </div>
                 </div>
                 <div class="item">
@@ -88,7 +90,9 @@
                             어드민 - 유저 프로필, 유저별 활동내역, 관리자 승인, 채팅 현황, 매칭 확률 설정 등 프론트엔드 80% 참여<br>
                             웹뷰 - 공지사항, FAQ, 개인정보취급방침, 이용약관 등 앱 내 웹뷰 작업.
                         </p>
-                        <a class="button" href="https://play.google.com/store/apps/details?id=mars.nomad.com.blinddate2018" target="_blank"><span>Visit Website</span><span class="icon"><i class="fas fa-angle-right"></i></span></a>
+                        <a class="button" href="https://play.google.com/store/apps/details?id=mars.nomad.com.blinddate2018" target="_blank">
+                        <span>Visit Website</span><span class="icon"><i class="fas fa-angle-right"></i></span>
+                        </a>
                     </div>
                 </div>
                 <div class="item">
