@@ -2,18 +2,22 @@
     <div class="container">
         <router-link to="/"><logo></logo></router-link>
         <tool-bar></tool-bar>
-        <div class="contact-icon">
-            <a href="tel:010-3013-3596"><i class="fas fa-mobile-alt"></i></a>
-        </div>
-        <div class="contact-icon">
-            <a href="mailto:soyoungp02@gmail.com"><i class="far fa-envelope"></i></a>
-        </div>
-        <div class="contact-icon">
-            <a href="https://psyvelop.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
-        </div>
-        <div class="contact-icon">
-            <a href="https://github.com/sunivers" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
+        <section class="section contact">
+            <h1>Contact me</h1>
+            <div class="contact-icon">
+                <a href="tel:010-3013-3596"><i class="fas fa-mobile-alt"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="mailto:soyoungp02@gmail.com"><i class="far fa-envelope"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="https://psyvelop.blogspot.com/" target="_blank"><i class="fab fa-blogger"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="https://github.com/sunivers" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+        
         <!-- <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div> -->
     </div>
 </template>
