@@ -31,10 +31,20 @@ export default {
 <style>
 @import url("./css/reset.css");
 
+/* common styling */
 html, body, #app {
   height: 100%;
 }
 .container {
   padding: 50px 20px;
+}
+.section {
+    margin: 20px 0 50px 0;
+}
+.section h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #aaa;
+  font-weight: bold;
 }
 </style>

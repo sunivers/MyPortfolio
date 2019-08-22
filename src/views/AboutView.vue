@@ -125,17 +125,6 @@ export default {
 </script>
 
 <style scoped>
-/* section styling */
-.section {
-    margin: 20px 0 50px 0;
-}
-.section h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #aaa;
-  font-weight: bold;
-}
-
 /* intro styling */
 .intro .flex-container {
     display: flex;
