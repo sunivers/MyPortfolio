@@ -22,13 +22,13 @@
         <!-- Time Line -->
         <section class="section timeline">
             <h1>timeline</h1>
-            <ol>
-                <li>
-                <div>
-                    <time>2010.03</time> 
-                    디지털미디어 학부 입학.<br>
-                    전공필수로 C언어를 수강하고 흥미를 느꼈으나 좌절감을 맛봄.
-                </div>
+            <ol ref="timeline" :style="'transform: translateX(0)'">
+                <li ref="firstItem">
+                  <div>
+                      <time>2010.03</time> 
+                      디지털미디어 학부 입학.<br>
+                      전공필수로 C언어를 수강하고 흥미를 느꼈으나 좌절감을 맛봄.
+                  </div>
                 </li>
                 <li>
                 <div>
@@ -94,13 +94,13 @@
                     현재까지 다양한 사이드 프로젝트 진행 및 새로운 언어와 프레임워크, 방법론 등을 학습하며 프로그래밍 영역 확장 중.
                 </div>
                 </li>
-                <li></li>
+                <li ref="lastItem"></li>
             </ol>
             <div class="arrows">
-                <button class="arrow arrow__prev disabled" disabled>
+                <button ref="arrowPrev" class="arrow arrow__prev disabled" disabled @click="moveLeft()">
                     <img src="../assets/arrow_prev.svg" alt="prev timeline arrow">
                 </button>
-                <button class="arrow arrow__next">
+                <button ref="arrowNext" class="arrow arrow__next" @click="moveRight()">
                     <img src="../assets/arrow_next.svg" alt="next timeline arrow">
                 </button>
             </div>
@@ -111,15 +111,66 @@
 <script>
 import Logo from '../components/Logo.vue';
 import ToolBar from '../components/ToolBar.vue';
-import activateTimeLine from '../js/timeline.js';
 
 export default {
     components: {
         Logo,
         ToolBar,
     },
-    mounted() {
-        activateTimeLine();
+    methods: {
+      moveLeft: function() {
+          this.animateTimeLine('');
+      },
+      moveRight: function() {
+        this.animateTimeLine('-');
+      },
+      animateTimeLine: function(sign) {
+          const tl = this.$refs.timeline,
+          firstItem = this.$refs.firstItem,
+          lastItem = this.$refs.lastItem,
+          arrowPrev = this.$refs.arrowPrev,
+          arrowNext = this.$refs.arrowNext,
+          scrolling = 280;
+
+          if (!arrowPrev.disabled) {
+            arrowPrev.disabled = true;
+          }
+          if (!arrowNext.disabled) {
+            arrowNext.disabled = true;
+          }
+          const tlStyle = getComputedStyle(tl);
+          // add more browser prefixes if needed here
+          const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
+          const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
+          tl.style.transform = `translateX(${values}px)`;
+
+          setTimeout(() => {
+              this.isElementInViewport(firstItem) ? this.setBtnState(arrowPrev) : this.setBtnState(arrowPrev, false);
+              this.isElementInViewport(lastItem) ? this.setBtnState(arrowNext) : this.setBtnState(arrowNext, false);
+              }, 1100);
+      },
+      isElementInViewport: function (el) {
+          const rect = el.getBoundingClientRect();
+          return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
+      },
+      // SET STATE OF PREV/NEXT ARROWS
+      setBtnState: function (el, flag = true) {
+          const disabledClass = "disabled";
+          if (flag) {
+            el.classList.add(disabledClass);
+          } else {
+            if (el.classList.contains(disabledClass)) {
+                el.classList.remove(disabledClass);
+            }
+            el.disabled = false;
+          }
+      },
+      
     }
 }
 </script>

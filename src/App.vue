@@ -35,6 +35,9 @@ export default {
 html, body, #app {
   height: 100%;
 }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .container {
   padding: 50px 20px;
 }
