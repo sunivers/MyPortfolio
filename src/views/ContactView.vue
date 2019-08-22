@@ -34,7 +34,7 @@ export default {
 @import url('../../node_modules/@fortawesome/fontawesome-free/css/all.css');
 .contact-icon {
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 .contact-icon i {
     font-size: 70px;
