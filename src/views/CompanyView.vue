@@ -159,16 +159,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.section {
-    margin: 20px 0 50px 0;
-}
-.section h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #aaa;
-  font-weight: bold;
-}
+<style>
+/* project list styling */
 .project-list .item {
     overflow: hidden;
     margin-bottom: 30px;
