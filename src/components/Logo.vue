@@ -85,10 +85,10 @@ export default {
 /* nav-list CSS */
 .nav-list {
   position: absolute;
-  width: 310px;
+  width: 320px;
 }
 .nav-list li {
-  width: 100px;
+  width: 110px;
   padding: 20px 0;
   display: inline-block;
   vertical-align: middle;
@@ -98,7 +98,7 @@ export default {
   opacity: 0;
 }
 .nav-list li:nth-child(odd) {
-  margin-right: 110px;
+  margin-right: 100px;
   text-align: right;
 }
 .nav-list li:nth-child(1), .nav-list li:nth-child(2) {
