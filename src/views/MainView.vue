@@ -15,16 +15,21 @@
 			<h1>Select!</h1>
 			<ul>
 				<li>
-					<router-link to="/company">company project</router-link>
+					<router-link to="/company">company project
+					<i class="fas fa-arrow-right"></i></router-link>
+					
 				</li>
 				<li>
-					<router-link to="/toy">toy project</router-link>
+					<router-link to="/toy">toy project
+					<i class="fas fa-arrow-right"></i></router-link>
 				</li>
 				<li>
-					<router-link to="/about">about me</router-link>
+					<router-link to="/about">about me
+					<i class="fas fa-arrow-right"></i></router-link>
 				</li>
 				<li>
-					<router-link to="/contact">contact me</router-link>
+					<router-link to="/contact">contact me
+					<i class="fas fa-arrow-right"></i></router-link>
 				</li>
 			</ul>
 		</section>
@@ -106,6 +111,12 @@ section.navigation {
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	box-shadow: 5px 5px #364f6b;
+	position: relative;
+}
+.navigation li a i {
+	position: absolute;
+	right: 10px;
+	top: 11px;
 }
 
 /* 760px 이상 */
