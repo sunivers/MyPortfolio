@@ -113,214 +113,222 @@ import Logo from '../components/Logo.vue';
 import ToolBar from '../components/ToolBar.vue';
 
 export default {
-    components: {
-        Logo,
-        ToolBar,
-    },
-    methods: {
-      moveLeft: function() {
-          this.animateTimeLine('');
-      },
-      moveRight: function() {
-        this.animateTimeLine('-');
-      },
-      animateTimeLine: function(sign) {
-          const tl = this.$refs.timeline,
-          firstItem = this.$refs.firstItem,
-          lastItem = this.$refs.lastItem,
-          arrowPrev = this.$refs.arrowPrev,
-          arrowNext = this.$refs.arrowNext,
-          scrolling = 280;
+	components: {
+		Logo,
+		ToolBar,
+	},
+	methods: {
+		moveLeft: function() {
+			this.animateTimeLine('');
+		},
+		moveRight: function() {
+			this.animateTimeLine('-');
+		},
+		animateTimeLine: function(sign) {
+			const tl = this.$refs.timeline,
+				firstItem = this.$refs.firstItem,
+				lastItem = this.$refs.lastItem,
+				arrowPrev = this.$refs.arrowPrev,
+				arrowNext = this.$refs.arrowNext,
+				scrolling = 280;
 
-          if (!arrowPrev.disabled) {
-            arrowPrev.disabled = true;
-          }
-          if (!arrowNext.disabled) {
-            arrowNext.disabled = true;
-          }
-          const tlStyle = getComputedStyle(tl);
-          // add more browser prefixes if needed here
-          const tlTransform = tlStyle.getPropertyValue("-webkit-transform") || tlStyle.getPropertyValue("transform");
-          const values = parseInt(tlTransform.split(",")[4]) + parseInt(`${sign}${scrolling}`);
-          tl.style.transform = `translateX(${values}px)`;
+			if (!arrowPrev.disabled) {
+				arrowPrev.disabled = true;
+			}
+			if (!arrowNext.disabled) {
+				arrowNext.disabled = true;
+			}
+			const tlStyle = getComputedStyle(tl);
+			// add more browser prefixes if needed here
+			const tlTransform =
+				tlStyle.getPropertyValue('-webkit-transform') ||
+				tlStyle.getPropertyValue('transform');
+			const values =
+				parseInt(tlTransform.split(',')[4]) + parseInt(`${sign}${scrolling}`);
+			tl.style.transform = `translateX(${values}px)`;
 
-          setTimeout(() => {
-              this.isElementInViewport(firstItem) ? this.setBtnState(arrowPrev) : this.setBtnState(arrowPrev, false);
-              this.isElementInViewport(lastItem) ? this.setBtnState(arrowNext) : this.setBtnState(arrowNext, false);
-              }, 1100);
-      },
-      isElementInViewport: function (el) {
-          const rect = el.getBoundingClientRect();
-          return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-          );
-      },
-      // SET STATE OF PREV/NEXT ARROWS
-      setBtnState: function (el, flag = true) {
-          const disabledClass = "disabled";
-          if (flag) {
-            el.classList.add(disabledClass);
-          } else {
-            if (el.classList.contains(disabledClass)) {
-                el.classList.remove(disabledClass);
-            }
-            el.disabled = false;
-          }
-      },
-      
-    }
-}
+			setTimeout(() => {
+				this.isElementInViewport(firstItem)
+					? this.setBtnState(arrowPrev)
+					: this.setBtnState(arrowPrev, false);
+				this.isElementInViewport(lastItem)
+					? this.setBtnState(arrowNext)
+					: this.setBtnState(arrowNext, false);
+			}, 1100);
+		},
+		isElementInViewport: function(el) {
+			const rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <=
+					(window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <=
+					(window.innerWidth || document.documentElement.clientWidth)
+			);
+		},
+		// SET STATE OF PREV/NEXT ARROWS
+		setBtnState: function(el, flag = true) {
+			const disabledClass = 'disabled';
+			if (flag) {
+				el.classList.add(disabledClass);
+			} else {
+				if (el.classList.contains(disabledClass)) {
+					el.classList.remove(disabledClass);
+				}
+				el.disabled = false;
+			}
+		},
+	},
+};
 </script>
 
 <style scoped>
 /* intro styling */
 .intro .flex-container {
-    display: flex;
-    padding: 20px;
-    max-width: 715px;
-    margin: 0 auto;
-    align-items: center;
-    flex-direction: column;
+	display: flex;
+	padding: 20px;
+	max-width: 715px;
+	margin: 0 auto;
+	align-items: center;
+	flex-direction: column;
 }
-@media (min-width:768px) {
-    .intro .flex-container {
-        flex-direction: row;
-    }
+@media (min-width: 768px) {
+	.intro .flex-container {
+		flex-direction: row;
+	}
 }
 .intro .image {
-    margin: 0 20px 20px 0;
-    width: 150px;
-    height: 150px;
-    background-image: url('../assets/profile_image.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
+	margin: 0 20px 20px 0;
+	width: 150px;
+	height: 150px;
+	background-image: url('../assets/profile_image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .intro img {
-    width: 150px;
-    border-radius: 70px;
+	width: 150px;
+	border-radius: 70px;
 }
 .intro .text {
-    font-weight: lighter;
-    padding: 20px;
-    line-height: 1.3;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
-    max-width: 500px;
+	font-weight: lighter;
+	padding: 20px;
+	line-height: 1.3;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+	max-width: 500px;
 }
 
 /* timeline styling */
 .timeline {
-  white-space: nowrap;
-  overflow-x: hidden;
+	white-space: nowrap;
+	overflow-x: hidden;
 }
- 
+
 .timeline ol {
-  font-size: 0;
-  width: 100vw;
-  padding: 250px 0;
-  transition: all 1s;
+	font-size: 0;
+	width: 100vw;
+	padding: 250px 0;
+	transition: all 1s;
 }
- 
+
 .timeline ol li {
-  position: relative;
-  display: inline-block;
-  list-style-type: none;
-  width: 160px;
-  height: 3px;
-  background: #aaa;
+	position: relative;
+	display: inline-block;
+	list-style-type: none;
+	width: 160px;
+	height: 3px;
+	background: #aaa;
 }
- 
+
 .timeline ol li:last-child {
-  width: 280px;
+	width: 280px;
 }
- 
+
 .timeline ol li:not(:first-child) {
-  margin-left: 14px;
+	margin-left: 14px;
 }
- 
+
 .timeline ol li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: #F45B69;
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: calc(100% + 1px);
+	bottom: 0;
+	width: 12px;
+	height: 12px;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	background: #f45b69;
 }
 
 .timeline ol li div {
-  position: absolute;
-  left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
-  font-size: 1rem;
-  font-weight: lighter;
-  white-space: normal;
-  color: black;
-  background: white;
-  line-height: 1.3;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+	position: absolute;
+	left: calc(100% + 7px);
+	width: 280px;
+	padding: 15px;
+	font-size: 1rem;
+	font-weight: lighter;
+	white-space: normal;
+	color: black;
+	background: white;
+	line-height: 1.3;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .timeline ol li div::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 0;
+	height: 0;
+	border-style: solid;
 }
 
 .timeline ol li div time {
-    display: block;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 7px;
+	display: block;
+	font-weight: bold;
+	color: #555;
+	margin-bottom: 7px;
 }
 
 .timeline ol li:nth-child(odd) div {
-  top: -16px;
-  transform: translateY(-100%);
+	top: -16px;
+	transform: translateY(-100%);
 }
- 
+
 .timeline ol li:nth-child(odd) div::before {
-  top: 100%;
-  border-width: 8px 8px 0 0;
-  border-color: white transparent transparent transparent;
+	top: 100%;
+	border-width: 8px 8px 0 0;
+	border-color: white transparent transparent transparent;
 }
 
 .timeline ol li:nth-child(even) div {
-  top: calc(100% + 16px);
+	top: calc(100% + 16px);
 }
- 
+
 .timeline ol li:nth-child(even) div::before {
-  top: -8px;
-  border-width: 8px 0 0 8px;
-  border-color: transparent transparent transparent white;
+	top: -8px;
+	border-width: 8px 0 0 8px;
+	border-color: transparent transparent transparent white;
 }
 
 .timeline .arrows {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
 }
- 
+
 .timeline .arrows .arrow__prev {
-  margin-right: 20px;
+	margin-right: 20px;
 }
- 
+
 .timeline .disabled {
-  opacity: .5;
+	opacity: 0.5;
 }
- 
+
 .timeline .arrows img {
-  width: 45px;
-  height: 45px;
+	width: 45px;
+	height: 45px;
 }
 </style>

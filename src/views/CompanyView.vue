@@ -8,8 +8,8 @@
             <div class="project-list">
                 <div class="item"> 
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/TocToc-1.jpg">
-                        <img class="project-thumb" src="../assets/TocToc-2.jpg">
+                        <img class="project-thumb" src="../assets/toctoc_1.jpg">
+                        <img class="project-thumb" src="../assets/toctoc_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">톡톡솔루션</h1>
@@ -28,8 +28,8 @@
                 </div>
                 <div class="item">
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/flyingofbee1.jpg">
-                        <img class="project-thumb" src="../assets/flyingofbee2.jpg">
+                        <img class="project-thumb" src="../assets/flyingofbee_1.jpg">
+                        <img class="project-thumb" src="../assets/flyingofbee_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">꿀벌의 비행</h1>
@@ -48,8 +48,8 @@
                 </div>
                 <div class="item"> 
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/entpark1.jpg">
-                        <img class="project-thumb" src="../assets/entpark2.jpg">
+                        <img class="project-thumb" src="../assets/entpark_1.jpg">
+                        <img class="project-thumb" src="../assets/entpark_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">엔팍</h1>
@@ -66,8 +66,8 @@
                 </div>
                 <div class="item">
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/G1230-1.jpg">
-                        <img class="project-thumb" src="../assets/G1230-2.jpg">
+                        <img class="project-thumb" src="../assets/g1230_1.jpg">
+                        <img class="project-thumb" src="../assets/g1230_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">G1230</h1>
@@ -84,8 +84,8 @@
                 </div>
                 <div class="item"> 
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/BlindDate-1.jpg">
-                        <img class="project-thumb" src="../assets/BlindDate-2.jpg">
+                        <img class="project-thumb" src="../assets/blinddate_1.jpg">
+                        <img class="project-thumb" src="../assets/blinddate_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">블라인드데이트</h1>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="item">
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/SPEP-1.jpg">
+                        <img class="project-thumb" src="../assets/spep_1.jpg">
                         <!-- <img class="project-thumb" src="../assets/SPEP-1.jpg"> -->
                     </figure>
                     <div class="text">
@@ -122,8 +122,8 @@
                 </div>
                 <div class="item">
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/citadine1.jpg">
-                        <img class="project-thumb" src="../assets/citadine2.jpg">
+                        <img class="project-thumb" src="../assets/citadine_1.jpg">
+                        <img class="project-thumb" src="../assets/citadine_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">시타딘 한리버 서울</h1>
@@ -139,8 +139,8 @@
                 </div>
                 <div class="item">
                     <figure class="image">
-                        <img class="project-thumb" src="../assets/central1.jpg">
-                        <img class="project-thumb" src="../assets/central2.jpg">
+                        <img class="project-thumb" src="../assets/central_1.jpg">
+                        <img class="project-thumb" src="../assets/central_2.jpg">
                     </figure>
                     <div class="text">
                         <h1 class="title">Central</h1>
@@ -164,58 +164,58 @@ import Logo from '../components/Logo.vue';
 import ToolBar from '../components/ToolBar.vue';
 
 export default {
-    components: {
-        Logo,
-        ToolBar,
-    }
-}
+	components: {
+		Logo,
+		ToolBar,
+	},
+};
 </script>
 
 <style>
 /* project list styling */
 .project-list .item {
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    max-width: 700px;
-    margin: 0 auto;
+	overflow: hidden;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #eee;
+	max-width: 700px;
+	margin: 0 auto;
 }
 .project-list .image {
-    margin: 0 auto;
-    text-align: center;
+	margin: 0 auto;
+	text-align: center;
 }
 .project-list .image .project-thumb {
-    width: 250px;
-    margin: 20px;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+	width: 250px;
+	margin: 20px;
+	box-shadow: 0 4px 6px rgba(50, 50, 93, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 .project-list .text {
-    text-align: center;
-    padding: 20px;
+	text-align: center;
+	padding: 20px;
 }
 .project-list .text .title {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 20px;
+	font-size: 1.2rem;
+	color: #333;
+	margin-bottom: 20px;
 }
 .project-list .text .desc {
-    margin-bottom: 20px;
-    font-weight: lighter;
-    line-height: 1.3;
+	margin-bottom: 20px;
+	font-weight: lighter;
+	line-height: 1.3;
 }
 .project-list .text .button {
-    display: inline-block;
-    padding: 9px 14px;
-    border: 1px solid #42b883;
-    color: #42b883;
-    text-decoration: none;
-    border-radius: 20px;
+	display: inline-block;
+	padding: 9px 14px;
+	border: 1px solid #42b883;
+	color: #42b883;
+	text-decoration: none;
+	border-radius: 20px;
 }
 .project-list .text .button:hover {
-    background-color: #42b883;
-    color: white;
+	background-color: #42b883;
+	color: white;
 }
 .project-list .text .button .icon {
-    margin-left: 5px;
+	margin-left: 5px;
 }
 </style>

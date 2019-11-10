@@ -1,53 +1,61 @@
 <template>
   <div id="app">
-    <template v-if="this.$route.path === '/'">
-      <logo :is-hover-once="true">
-        <template slot="list-1"><router-link to="/company">company p.j</router-link></template>
-        <template slot="list-2"><router-link to="/about">about me</router-link></template>
-        <template slot="list-3"><router-link to="/personal">personal p.j</router-link></template>
-        <template slot="list-4"><router-link to="/contact">contact me</router-link></template>
-      </logo>
-    </template>
-    <template v-else>
-      <router-view></router-view>
-    </template>
+		<main v-if="this.$route.path === '/'">
+			<MainView></MainView>
+		</main>
+		<main v-else>
+			<router-view></router-view>
+		</main>
+		<Footer></Footer>
   </div>
 </template>
 
 <script>
-import Logo from './components/Logo.vue'
+// import Logo from './components/Logo.vue';
+import MainView from './views/MainView.vue';
+import Footer from './components/Footer.vue';
 
 export default {
-  name: 'app',
-  components: {
-    Logo
-  },
-  created() {
-    console.log(this.$route);
-  }
-}
+	name: 'app',
+	components: {
+		MainView,
+		Footer,
+	},
+};
 </script>
 
 <style>
-@import url("./css/reset.css");
-
 /* common styling */
-html, body, #app {
-  height: 100%;
+html,
+body,
+#app {
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+		Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: #e8e8e8;
+}
+#app {
+	display: flex;
+	flex-direction: column;
+}
+#app main {
+	flex: 1;
 }
 .container {
-  padding: 50px 20px;
+	padding: 50px 20px;
 }
 .section {
-    margin: 20px 0 50px 0;
+	margin: 20px 0 50px 0;
 }
 .section h1 {
-  font-size: 2rem;
-  text-transform: uppercase;
-  color: #aaa;
-  font-weight: bold;
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: #aaa;
+	font-weight: bold;
 }
 </style>
