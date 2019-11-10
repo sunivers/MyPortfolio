@@ -4,6 +4,7 @@
 			<MainView></MainView>
 		</main>
 		<main v-else>
+			<tool-bar></tool-bar>
 			<router-view></router-view>
 		</main>
 		<Footer></Footer>
@@ -11,14 +12,15 @@
 </template>
 
 <script>
-// import Logo from './components/Logo.vue';
 import MainView from './views/MainView.vue';
+import ToolBar from './components/ToolBar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
 	name: 'app',
 	components: {
 		MainView,
+		ToolBar,
 		Footer,
 	},
 };
@@ -51,11 +53,16 @@ body {
 }
 .section {
 	margin: 20px 0 50px 0;
+	background-color: #fff;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.12);
+	padding: 20px;
+	text-align: center;
 }
-.section h1 {
+.section > h1 {
 	font-size: 2rem;
+	font-weight: 900;
+	color: #ff78a1;
+	text-shadow: 2px 2px #364f6b;
 	text-transform: uppercase;
-	color: #aaa;
-	font-weight: bold;
 }
 </style>

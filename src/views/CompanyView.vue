@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <router-link to="/"><logo></logo></router-link>
-        <tool-bar></tool-bar>
-
         <section class="section projects">
             <h1>Company Project</h1>
             <div class="project-list">
@@ -160,15 +157,7 @@
 </template>
 
 <script>
-import Logo from '../components/Logo.vue';
-import ToolBar from '../components/ToolBar.vue';
-
-export default {
-	components: {
-		Logo,
-		ToolBar,
-	},
-};
+export default {};
 </script>
 
 <style>
@@ -179,6 +168,9 @@ export default {
 	border-bottom: 1px solid #eee;
 	max-width: 700px;
 	margin: 0 auto;
+}
+.project-list .item:last-child {
+	border-bottom: none;
 }
 .project-list .image {
 	margin: 0 auto;

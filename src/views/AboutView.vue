@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <router-link to="/"><logo></logo></router-link>
-        <tool-bar></tool-bar>
-
         <!-- Intro -->
         <section class="section intro">
             <h1>intro</h1>
@@ -109,14 +106,7 @@
 </template>
 
 <script>
-import Logo from '../components/Logo.vue';
-import ToolBar from '../components/ToolBar.vue';
-
 export default {
-	components: {
-		Logo,
-		ToolBar,
-	},
 	methods: {
 		moveLeft: function() {
 			this.animateTimeLine('');
@@ -318,7 +308,10 @@ export default {
 	justify-content: center;
 	margin-bottom: 20px;
 }
-
+.timeline .arrows button {
+	border: none;
+	background-color: none;
+}
 .timeline .arrows .arrow__prev {
 	margin-right: 20px;
 }

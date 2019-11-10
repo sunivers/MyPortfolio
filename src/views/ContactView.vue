@@ -1,7 +1,5 @@
 <template>
     <div class="container">
-        <router-link to="/"><logo></logo></router-link>
-        <tool-bar></tool-bar>
         <section class="section contact">
             <h1>Contact me</h1>
             <div class="contact-icon">
@@ -23,15 +21,7 @@
 </template>
 
 <script>
-import Logo from '../components/Logo.vue';
-import ToolBar from '../components/ToolBar.vue';
-
-export default {
-	components: {
-		Logo,
-		ToolBar,
-	},
-};
+export default {};
 </script>
 
 <style scoped>

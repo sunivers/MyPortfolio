@@ -1,10 +1,7 @@
 <template>
     <div class="container">
-        <router-link to="/"><logo></logo></router-link>
-        <tool-bar></tool-bar>
-
         <section class="section projects">
-            <h1>Personal Project</h1>
+            <h1>Toy Project</h1>
             <div class="project-list">
                 <div class="item"> 
                     <figure class="image">
@@ -88,15 +85,7 @@
 </template>
 
 <script>
-import Logo from '../components/Logo.vue';
-import ToolBar from '../components/ToolBar.vue';
-
-export default {
-	components: {
-		Logo,
-		ToolBar,
-	},
-};
+export default {};
 </script>
 
 <style>

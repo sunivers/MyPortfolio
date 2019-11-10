@@ -18,7 +18,7 @@
 					<router-link to="/company">company project</router-link>
 				</li>
 				<li>
-					<router-link to="/personal">personal project</router-link>
+					<router-link to="/toy">toy project</router-link>
 				</li>
 				<li>
 					<router-link to="/about">about me</router-link>

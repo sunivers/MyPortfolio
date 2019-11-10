@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import CompanyView from '../views/CompanyView.vue';
-import PersonalView from '../views/PersonalView.vue';
+import ToyView from '../views/ToyView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContactView from '../views/ContactView.vue';
 
@@ -16,9 +16,9 @@ export const router = new VueRouter({
       component: CompanyView,
     },
     {
-      path: '/personal',
-      name: 'personal',
-      component: PersonalView,
+      path: '/toy',
+      name: 'toy',
+      component: ToyView,
     },
     {
       path: '/about',
