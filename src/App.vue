@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-		<main v-if="this.$route.path === '/'">
-			<MainView></MainView>
-		</main>
-		<main v-else>
+		<main>
 			<tool-bar></tool-bar>
 			<router-view></router-view>
 		</main>
@@ -12,14 +9,12 @@
 </template>
 
 <script>
-import MainView from './views/MainView.vue';
 import ToolBar from './components/ToolBar.vue';
 import Footer from './components/Footer.vue';
 
 export default {
 	name: 'app',
 	components: {
-		MainView,
 		ToolBar,
 		Footer,
 	},
